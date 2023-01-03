@@ -43,7 +43,7 @@ export const TopText = styled.span`
 `;
 
 export const ClearCartText = styled.span`
-  padding: 10px;
+  padding: 12px;
   border-radius: 5px;
   cursor: pointer;
   margin: 0px 10px;
