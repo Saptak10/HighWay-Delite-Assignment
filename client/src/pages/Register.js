@@ -1,5 +1,9 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
+import { register, reset } from '../reducers/user/userSlice'
+import Spinner from '../components/Spinner/Spinner'
 
 function Register() {
   const [formData, setFormData] = useState({
@@ -10,6 +14,25 @@ function Register() {
   })
 
   const { name, email, password, password2 } = formData;
+
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
+
+  const { user, isLoading, isError, isSuccess, message} = useSelector(
+    (state) => state.user)
+
+  useEffect(() => {
+    if(isError){ 
+      toast.error(message) 
+    }
+
+    if(isSuccess || user){
+      navigate('/')
+    }
+
+    dispatch(reset())
+
+  }, [user, isError, isSuccess, message, navigate, dispatch])
   
   const onChange = (e) => {
     setFormData((prevState) => ({
@@ -30,7 +53,12 @@ function Register() {
         password,
       }
 
+      dispatch(register(userData))
     }
+  }
+
+  if(isLoading){
+    return <Spinner />
   }
 
   return (
@@ -39,6 +67,7 @@ function Register() {
         <h1>
           Register
         </h1>
+        {/* <p>Register</p> */}
       </section>
 
       <section className='form'>

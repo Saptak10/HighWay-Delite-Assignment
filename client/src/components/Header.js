@@ -1,18 +1,31 @@
 import { useState } from 'react'
 
 import { AppBar, Box, Divider, Drawer, IconButton, List, ListItem, ListItemButton, 
-  ListItemText, Toolbar, Typography, Button, MenuItem, Menu } from '@mui/material';
+  ListItemText, Toolbar, Typography, Button, Menu } from '@mui/material';
 
 import MenuIcon from '@mui/icons-material/Menu';
 import AddShoppingCartOutlinedIcon from '@mui/icons-material/AddShoppingCartOutlined';
 
-import { Link } from 'react-router-dom'
+import { useSelector, useDispatch } from 'react-redux'
+import { logout, reset } from '.././reducers/user/userSlice'
+
+import { Link, useNavigate } from 'react-router-dom'
 
 import '.././App.css'
 
 const drawerWidth = 200;
 
 function Header(props) {
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
+
+  const { user } = useSelector((state) => state.user)
+
+  const onLogout = () => {
+    dispatch(logout())
+    dispatch(reset())
+    navigate('/')
+  }
 
   const { window } = props;
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -66,6 +79,16 @@ function Header(props) {
               </Link>
             </ListItemButton>
           </ListItem>
+          {user ? (
+            <ListItem>
+              <ListItemButton>
+              <div onClick={onLogout} className='header-link-mobile'>
+                <ListItemText primary='Logout' sx={{ color: 'black' }}/>
+              </div>
+              </ListItemButton>
+            </ListItem>
+          ) : (
+            <>
               <ListItem>
                 <ListItemButton>
                   <Link to='/login' className='header-link-mobile'>
@@ -80,6 +103,8 @@ function Header(props) {
                   </Link>
                 </ListItemButton>
               </ListItem>
+            </>
+            )}
       </List>
     </Box>
   );
@@ -117,7 +142,9 @@ function Header(props) {
           onClick={handleProfileMenuOpen}
           color="inherit"
         >
-          <Link to='/orders' className='header-link-mobile'>Orders</Link>
+          <Button sx={{ color: '#fff' }}>
+            <Link to='/orders' className='header-link-mobile'>Orders</Link>
+          </Button>
         </IconButton>
         <IconButton sx={{display: { sm: 'none' } }}
           size="large"
@@ -133,12 +160,20 @@ function Header(props) {
               <Button sx={{ color: '#fff' }}>
                 <Link to='/' className='header-link-desktop'>Home</Link>
               </Button>
+                {user ? (
+                <Button sx={{ color: '#fff' }}>
+                <div onClick={onLogout} className='header-link-desktop'>Logout</div>
+              </Button>
+               ) : (
+              <>
                 <Button sx={{ color: '#fff' }}>
                   <Link to='/login' className='header-link-desktop'>Login</Link>
                 </Button>
                 <Button sx={{ color: '#fff' }}>
                   <Link to='/register' className='header-link-desktop'>Register</Link>
                 </Button>
+              </>
+               )}
           </Box>
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
             <IconButton
@@ -150,7 +185,9 @@ function Header(props) {
               onClick={handleProfileMenuOpen}
               color="inherit"
             >
-              <Link to='/orders' className='header-link-mobile'>Orders</Link>
+              <Button sx={{ color: '#fff' }}>
+                <Link to='/orders' className='header-link-mobile'>Orders</Link>
+              </Button>
             </IconButton>
           </Box>
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
@@ -189,3 +226,4 @@ function Header(props) {
 }
 
 export default Header;
+
