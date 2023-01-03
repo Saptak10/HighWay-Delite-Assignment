@@ -4,11 +4,14 @@ import Rating from "./Rating";
 
 import { Container, Info, Image, Details, PriceBox, Circle, Icon } from "./ProductStyle"
 
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+
+import { addToCart } from '../../reducers/cart/cartSlice'
 
 const Product = ({ item }) => {
 
     const navigate = useNavigate()
+    const dispatch = useDispatch()
 
     const { user } = useSelector((state) => state.user)
 
@@ -18,8 +21,9 @@ const Product = ({ item }) => {
         margin: '1em',
       };
 
-    const addToCartHandler = (e) => {
-        console.log(e)
+    const addToCartHandler = (product) => {
+        console.log(product)
+        dispatch(addToCart(product))
         user ? navigate('/cart') : navigate('/login')
     }
 
