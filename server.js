@@ -8,8 +8,6 @@ const userRoute = require('./route/userRoutes');
 const productRoute = require('./route/productRoutes');
 // import orderRoutes from './routes/orderRoutes.js'
 
-const schema = require('./schema/schema.js');
-
 const app = express();
 
 if (process.env.NODE_ENV !== "production") {
