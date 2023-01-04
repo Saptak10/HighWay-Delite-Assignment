@@ -19,8 +19,7 @@ Server (http://localhost:3000/)
 
 - Technologies used are Reactjs, Material UI, Redux ToolKit, Axios, CSS, react-toastify, styled-components.
 - The home page displays all the products,
-- Items can be added to the cart,
-- Items can modified and removed from cart
+- Items can be added, modified and removed from the cart,
 - Redux Toolkit is used for global state management
 - React router dom to manage the routing
 - various react hooks like useState(for state update), useEffect(for data rendering) is used
@@ -29,6 +28,11 @@ Server (http://localhost:3000/)
 - Axios is used for API calling from backend server
 - styled-components is used for a fluid css styling
 - material ui and its icons are used to build the UI framework and the styling of the pages
+- order page is made to see the order history
+- user receives a mail after placing the order and can see his order details in the order page
+- date and time is shown of the placed order
+- emailjs is used for mail sending
+- user can remove past orders
 
 ## Backend Port - 5000
 
