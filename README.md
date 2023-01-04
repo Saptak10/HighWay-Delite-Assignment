@@ -1,5 +1,18 @@
 # HighWay-Delite-Assignment
 
+Details
+
+Name - An Ecommerce Application
+
+Tasks
+
+- List at least 10 items that are available for purchase.
+- Can add, remove, change quantity of items in the cart.
+- User must login to place the order.
+- Items in the cart must be persisted across login.
+- Should receive an email with relevant order information when order placed.
+- An option to see the past orders.
+
 ## Frontend Port - 3000
 
 Server (http://localhost:3000/)
