@@ -5,6 +5,8 @@ import { toast } from 'react-toastify'
 import { login, reset } from '../reducers/user/userSlice'
 import Spinner from '../components/Spinner/Spinner'
 
+import { Button } from '@mui/material';
+
 function Login() {
   const [formData, setFormData] = useState({
     email: '',
@@ -32,6 +34,17 @@ function Login() {
 
   }, [user, isError, isSuccess, 
     message, navigate, dispatch])
+    
+  const [passwordType, setPasswordType] = useState("password");
+
+  const togglePassword =()=>{
+    if(passwordType==="password")
+    {
+      setPasswordType("text")
+      return;
+    }
+    setPasswordType("password")
+  }
 
   const onChange = (e) => {
     setFormData((prevState) => ({
@@ -78,7 +91,7 @@ function Login() {
           </div>
           <div className='form-group'>
             <input
-              type='password'
+              type={passwordType}
               className='form-control'
               id='password'
               name='password'
@@ -86,6 +99,7 @@ function Login() {
               placeholder='Enter password'
               onChange={onChange}
             />
+            <Button variant="text" onClick={togglePassword}>Show Password</Button>
           </div>
 
           <div className='form-group'>
