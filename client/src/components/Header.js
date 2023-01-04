@@ -142,7 +142,7 @@ function Header(props) {
           onClick={handleProfileMenuOpen}
           color="inherit"
         >
-          <Button sx={{ color: '#fff' }}>
+          <Button sx={{ color: 'white' }}>
             <Link to='/orders' className='header-link-mobile'>Orders</Link>
           </Button>
         </IconButton>
@@ -185,7 +185,7 @@ function Header(props) {
               onClick={handleProfileMenuOpen}
               color="inherit"
             >
-              <Button sx={{ color: '#fff' }}>
+              <Button sx={{ color: 'white' }}>
                 <Link to='/orders' className='header-link-mobile'>Orders</Link>
               </Button>
             </IconButton>
