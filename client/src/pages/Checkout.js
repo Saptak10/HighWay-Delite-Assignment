@@ -73,17 +73,21 @@ export const Checkout = () => {
   function checkoutHandler(e) {
     e.preventDefault();
 
-    emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, e.target, USER_ID)
-      .then((result) => {
-          console.log(result.text);
-      }, (error) => {
-          console.log(error.text);
-      });
-
-      dispatch(addToOrders(cart));
-      dispatch(clearCart());
-      navigate('/orders')
+    if(user) {
+      emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, e.target, USER_ID)
+        .then((result) => {
+            console.log(result.text);
+        }, (error) => {
+            console.log(error.text);
+        });
+  
+        dispatch(addToOrders(cart));
+        dispatch(clearCart());
+       navigate('/orders') 
+    } else {
+      navigate('/login')
     }
+  }
 
   if (isLoading) {
     return <Spinner />

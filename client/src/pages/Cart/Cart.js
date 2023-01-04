@@ -12,38 +12,19 @@ import {Container, Wrapper, Title, Top, TopButton, TopTexts, TopText, Bottom,Inf
 import { useSelector, useDispatch } from 'react-redux'
 import { addToCart, clearCart, decreaseCart, getTotals, removeFromCart, } from '../.././reducers/cart/cartSlice'
 
-import { useNavigate } from 'react-router-dom'
-import { toast } from 'react-toastify'
-import { reset } from '../../reducers/user/userSlice'
-
 import EmptyCart from './EmptyCart';
 
 const Cart = () => {
 
-  const navigate = useNavigate()
   const dispatch = useDispatch()
 
   const cart = useSelector((state) => state.cart);
 
-  const { user, isError, message } = useSelector(
-    (state) => state.user
-  )
-
   const { cartItems, totalQuantity, totalAmount } = cart;
 
   useEffect(() => {
-    if (isError) {
-      toast.error(message)
-    }
-
-    if (!user) {
-      navigate('/login')
-    }
-
-    dispatch(reset())
-
     dispatch(getTotals());
-  }, [user, isError, message, navigate, cart, dispatch]);
+  }, [cart, dispatch]);
 
   const handleAddToCart = (product) => {
     dispatch(addToCart(product));
@@ -70,9 +51,8 @@ const Cart = () => {
             <Link to='/'><TopButton>CONTINUE SHOPPING</TopButton></Link>
             <TopTexts>
               <TopText>Total Items = {totalQuantity}</TopText>
-              <ClearCartText onClick={() => handleClearCart()}>Clear Cart</ClearCartText>
             </TopTexts>
-            <TopButton type="filled"><Link to='/address' className='header-link-desktop'>CHECKOUT NOW</Link></TopButton>
+            <ClearCartText onClick={() => handleClearCart()}>Clear Cart</ClearCartText>
           </Top>
           <Bottom>
             <Info>
