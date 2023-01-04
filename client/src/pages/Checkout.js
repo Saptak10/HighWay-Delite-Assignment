@@ -76,7 +76,7 @@ export const Checkout = () => {
 
       dispatch(addToOrders(cart));
       dispatch(clearCart());
-      navigate('/')
+      navigate('/orders')
     }
 
   if (isLoading) {
@@ -182,7 +182,6 @@ export const Checkout = () => {
               <h1>hello fren</h1>
           </div> */}
             <button type='submit' className='btn btn-block'>
-                  {/* Go for payment */}
                   Place Order
             </button>
         </Grid>
