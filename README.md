@@ -70,3 +70,25 @@ Server (http://localhost:5000/)
 UI Screenshots
 
 ![alt text](screenshots/home_page.jpg)
+<img src="/screenshots/home_page.jpg" alt="Alt text" title="Optional title">
+
+![alt text](screenshots/cart_page.jpg)
+<img src="/screenshots/cart_page.jpg" alt="Alt text" title="Optional title">
+
+![alt text](screenshots/checkout_page.jpg)
+<img src="/screenshots/checkout_page.jpg" alt="Alt text" title="Optional title">
+
+![alt text](screenshots/order_history_page.jpg)
+<img src="/screenshots/order_history_page.jpg" alt="Alt text" title="Optional title">
+
+![alt text](screenshots/past_orders.jpg)
+<img src="/screenshots/past_orders.jpg" alt="Alt text" title="Optional title">
+
+![alt text](screenshots/email_info.jpg)
+<img src="/screenshots/email_info.jpg" alt="Alt text" title="Optional title">
+
+![alt text](screenshots/register_page.jpg)
+<img src="/screenshots/register_page.jpg" alt="Alt text" title="Optional title">
+
+![alt text](screenshots/login_page.jpg)
+<img src="/screenshots/login_page.jpg" alt="Alt text" title="Optional title">
