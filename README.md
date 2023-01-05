@@ -1,10 +1,10 @@
 # HighWay-Delite-Assignment
 
-Details
+## Details
 
 Name - An Ecommerce Application
 
-Tasks
+## Tasks
 
 - List at least 10 items that are available for purchase.
 - Can add, remove, change quantity of items in the cart.
@@ -13,11 +13,28 @@ Tasks
 - Should receive an email with relevant order information when order placed.
 - An option to see the past orders.
 
+## To run the application
+
+### Frontend
+
+#### (In the terminal)
+- cd client
+- Type `npm install` command in /client directory
+
+### Backend
+
+- Install nodejs
+
+#### (In the terminal)
+- Type `npm install` command in root directory
+
+#### Finally (In the terminal) Type `npm run dev` command in root directory
+
 ## Frontend Port - 3000
 
 Server (http://localhost:3000/)
 
-- Technologies used are Reactjs, Material UI, Redux ToolKit, Axios, CSS, react-toastify, styled-components.
+- Technologies used are <b>Reactjs, Material UI, Redux ToolKit, Axios, CSS, react-toastify, styled-components.</b>
 - The home page displays all the products,
 - Items can be added, modified and removed from the cart,
 - Redux Toolkit is used for global state management
@@ -38,7 +55,7 @@ Server (http://localhost:3000/)
 
 Server (http://localhost:5000/)
 
-- Technologies used are Expressjs, Nodejs, Postman(for Api testing), bcryptjs, concurrently, cors, dotenv, jsonwebtoken, MongoDB
+- Technologies used are <b>Expressjs, Nodejs, Postman(for Api testing), bcryptjs, concurrently, cors, dotenv, jsonwebtoken, MongoDB.</b>
 - The products api displays all the products in /products route
 - Login Authentication is implemented along with user registration
 - along with authorisation is implemented using json web token for session storage
