@@ -66,3 +66,7 @@ Server (http://localhost:5000/)
 - MongoDb database is used to store the data using mongoose
 - Postman is used for all the API testing
 - concurrently is used to run the backend and the frontend server simultaneously
+
+UI Screenshots
+
+![alt text](screenshots/home_page.jpg)
