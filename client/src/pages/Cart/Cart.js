@@ -83,9 +83,9 @@ const Cart = () => {
                       </ProductAmountContainer>
                     </PriceDetail>
                   </Product>
+                  <Hr />
                 </div>
               ))}
-              <Hr />
             </Info>
             <Summary>
               <SummaryTitle>ORDER SUMMARY</SummaryTitle>
