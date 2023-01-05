@@ -69,4 +69,4 @@ Server (http://localhost:5000/)
 
 UI Screenshots
 
-![alt text](screenshots/home_page.jpg)
+![alt text](Screenshots/Home_Page.jpg)
