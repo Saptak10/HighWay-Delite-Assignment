@@ -23,7 +23,7 @@ Name - An Ecommerce Application
 
 ### Backend
 
-- Install nodejs
+- Install nodejs version 14.17.0
 
 #### (In the terminal)
 - Type `npm install` command in root directory
